@@ -1,9 +1,9 @@
 ﻿#include <iostream>
 #include <vector>
 #include <climits>
+#include <stdexcept> // Для std::invalid_argument
 
 std::pair<int, int> findMaxSubarrayIndices(const std::vector<int>& a) {
-    setlocale(LC_ALL, "Russian");
     if (a.empty()) {
         throw std::invalid_argument("Массив не должен быть пустым");
     }
@@ -35,8 +35,8 @@ std::pair<int, int> findMaxSubarrayIndices(const std::vector<int>& a) {
 int main() {
     setlocale(LC_ALL, "Russian");
     try {
-        std::vector<int> a = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
-        auto [start, end] = findMaxSubarrayIndices(a);
+        std::vector<int> a = { -2, 1, -3, 4, -1, 2, 1, -5, 4 }, b = { 1,34,2,3,-2,-3,12,22,34 }; //Просто для теста создал несколько массивов
+        auto [start, end] = findMaxSubarrayIndices(a); // Используем C++17 в отладке
         std::cout << "Индексы: " << start << ", " << end << std::endl;
 
     }

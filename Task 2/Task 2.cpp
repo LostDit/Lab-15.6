@@ -20,11 +20,11 @@ std::pair<int, int> findTwoNumbersWithSum(const std::vector<int>& a, int target)
 
 int main() {
     setlocale(LC_ALL, "Russian");
-    std::vector<int> a = { 2, 7, 11, 15 };
+    std::vector<int> a = { 2, 7, 11, 15 }, b = { 2,12,56,44,32,98 };//Создал несколько массивов для проверки
     int target = 9;
 
     try {
-        auto [num1, num2] = findTwoNumbersWithSum(a, target);
+        auto [num1,num2] = findTwoNumbersWithSum(b, target); // Используем C++17 в отладке
         std::cout << "Числа: " << num1 << " и " << num2 << std::endl;
     }
     catch (const std::exception& e) {

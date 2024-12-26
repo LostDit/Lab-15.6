@@ -7,6 +7,7 @@ void processInput() {
     int num;
 
     while (true) {
+        std::cout << "Введите значение: ";
         std::cin >> num;
 
         if (num == -2) {
@@ -18,14 +19,12 @@ void processInput() {
             // Если введено -1, нужно вывести пятое по возрастанию число
             if (smallestNumbers.size() < 5) {
                 std::cout << "Недостаточно чисел для определения пятого" << std::endl;
-            }
-            else {
+            }else {
                 auto it = smallestNumbers.begin();
                 std::advance(it, 4); // Переходим к пятому элементу
                 std::cout << "Пятое по возрастанию число: " << *it << std::endl;
             }
-        }
-        else {
+        }else {
             // Добавляем число в multiset
             smallestNumbers.insert(num);
 
@@ -39,7 +38,8 @@ void processInput() {
 }
 
 int main() {
-    std::cout << "Введите числа (−1 для вывода пятого числа, −2 для завершения):" << std::endl;
+    setlocale(LC_ALL, "Russian");
+    std::cout << "Введите числа (−1 для вывода пятого числа, −2 для завершения): ";
     processInput();
     return 0;
 }
